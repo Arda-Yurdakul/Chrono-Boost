@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class Rocket : MonoBehaviour
 {
@@ -9,10 +10,12 @@ public class Rocket : MonoBehaviour
     
     [SerializeField] private float thrust;
     [SerializeField] private float rotation;
+    [SerializeField] private float fuel = 20;
 
     [SerializeField] private ParticleSystem engineParticles;
     [SerializeField] private ParticleSystem winParticles;
     [SerializeField] private ParticleSystem deathParticles;
+    [SerializeField] private Slider fuelBar;
 
     private bool hasCollided;
     private enum State { Alive, Dead, Transcending }
@@ -26,6 +29,7 @@ public class Rocket : MonoBehaviour
         rigidbody = GetComponent<Rigidbody>();
         state = State.Alive;
         hasCollided = false;
+        fuelBar.maxValue = fuel;
     }
 
     // Update is called once per frame
@@ -33,6 +37,7 @@ public class Rocket : MonoBehaviour
     {
         if (state != State.Alive) { return; }
         ProcessInput();
+        fuelBar.value = fuel;
     }
 
 
@@ -47,10 +52,11 @@ public class Rocket : MonoBehaviour
                 Time.timeScale = 1f;
         }
 
-        if (Input.GetKey("space"))
+        if (Input.GetKey("space") && fuel > 0)
         {
             rigidbody.AddRelativeForce(0, thrust * Time.deltaTime, 0);
             AudioManager.Instance.PlayThruster();
+            fuel -= 1 * Time.deltaTime;
             if(!engineParticles.isPlaying)
                 engineParticles.Play();
         }
@@ -82,7 +88,6 @@ public class Rocket : MonoBehaviour
             switch (collision.gameObject.tag)
             {
                 case ("Friendly"):
-                    print("You have a friend in me");
                     break;
                 case ("finish"):
                     if(collision.gameObject.transform.position.y < transform.position.y)

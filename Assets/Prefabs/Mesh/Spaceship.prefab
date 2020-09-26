@@ -165,9 +165,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   thrust: 1500
   rotation: 200
+  fuel: 1000
   engineParticles: {fileID: 2908406920759457345}
   winParticles: {fileID: 3799591433417231325}
   deathParticles: {fileID: 6222298435810950853}
+  fuelBar: {fileID: 0}
 --- !u!82 &37924109116368817
 AudioSource:
   m_ObjectHideFlags: 0
