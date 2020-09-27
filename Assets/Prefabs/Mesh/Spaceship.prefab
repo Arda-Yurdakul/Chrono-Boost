@@ -169,6 +169,7 @@ MonoBehaviour:
   deathParticles: {fileID: 6222298435810950853}
   fuelBar: {fileID: 0}
   slowBar: {fileID: 0}
+  fuel: 0
 --- !u!1 &4807049571417920851
 GameObject:
   m_ObjectHideFlags: 0

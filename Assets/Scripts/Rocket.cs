@@ -96,7 +96,7 @@ public class Rocket : MonoBehaviour
                 case ("Friendly"):
                     break;
                 case ("finish"):
-                    if(collision.gameObject.transform.position.y < transform.position.y)
+                    if(collision.gameObject.transform.position.y + 0.5f < transform.position.y)
                     {
                         AudioManager.Instance.PlayWinJingle();
                         winParticles.Play();
