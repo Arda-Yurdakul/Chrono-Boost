@@ -97,7 +97,7 @@ LightmapSettings:
     m_ExportTrainingData: 0
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
-  m_LightingDataAsset: {fileID: 112000000, guid: 681327c5dccd6c347b59183939a0b195, type: 2}
+  m_LightingDataAsset: {fileID: 112000000, guid: 0b7e3c557ed54fb448a4d64869649a8b, type: 2}
   m_LightingSettings: {fileID: 4890085278179872738, guid: f1cfc2825ebf4e3409dda0e58f2ac0b8, type: 2}
 --- !u!196 &4
 NavMeshSettings:
@@ -492,7 +492,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!108 &705507994 stripped
 Light:
@@ -591,7 +591,7 @@ RectTransform:
   m_Children:
   - {fileID: 2004726539}
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -641,7 +641,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1459073986
 GameObject:
@@ -1055,64 +1055,3 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 55fa30d7afb49274ab83ee9ba5a36c90, type: 3}
---- !u!1001 &8168927619510305500
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 8168927619695500612, guid: d84d58ce8c651a54f8200a462faf13ef, type: 3}
-      propertyPath: bulletTime
-      value: 
-      objectReference: {fileID: 8300000, guid: 9bd878358b0af044abe5367dc4b3c388, type: 3}
-    - target: {fileID: 8168927619695500614, guid: d84d58ce8c651a54f8200a462faf13ef, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 16.793367
-      objectReference: {fileID: 0}
-    - target: {fileID: 8168927619695500614, guid: d84d58ce8c651a54f8200a462faf13ef, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 29.411
-      objectReference: {fileID: 0}
-    - target: {fileID: 8168927619695500614, guid: d84d58ce8c651a54f8200a462faf13ef, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -51.592026
-      objectReference: {fileID: 0}
-    - target: {fileID: 8168927619695500614, guid: d84d58ce8c651a54f8200a462faf13ef, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8168927619695500614, guid: d84d58ce8c651a54f8200a462faf13ef, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8168927619695500614, guid: d84d58ce8c651a54f8200a462faf13ef, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8168927619695500614, guid: d84d58ce8c651a54f8200a462faf13ef, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8168927619695500614, guid: d84d58ce8c651a54f8200a462faf13ef, type: 3}
-      propertyPath: m_RootOrder
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 8168927619695500614, guid: d84d58ce8c651a54f8200a462faf13ef, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8168927619695500614, guid: d84d58ce8c651a54f8200a462faf13ef, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8168927619695500614, guid: d84d58ce8c651a54f8200a462faf13ef, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8168927619695500619, guid: d84d58ce8c651a54f8200a462faf13ef, type: 3}
-      propertyPath: m_Name
-      value: AudioManager
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: d84d58ce8c651a54f8200a462faf13ef, type: 3}

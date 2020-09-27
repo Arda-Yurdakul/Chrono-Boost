@@ -20,6 +20,7 @@ public class HomingBehavior : MonoBehaviour
         transform.position = Vector3.MoveTowards(transform.position, player.transform.position, speed * Time.deltaTime);
         Vector3 dist = transform.position - player.transform.position;
         transform.LookAt(dist);
+        print("Hey");
     }
 
     private void OnCollisionEnter(Collision collision)
