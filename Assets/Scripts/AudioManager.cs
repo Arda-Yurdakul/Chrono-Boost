@@ -8,6 +8,7 @@ public class AudioManager : MonoBehaviour
     [SerializeField] AudioClip winJingle;
     [SerializeField] AudioClip deathExplosion;
     [SerializeField] AudioClip startCue;
+    [SerializeField] AudioClip bulletTime;
     AudioSource audioSource;
 
 
@@ -43,7 +44,7 @@ public class AudioManager : MonoBehaviour
 
     public void PlayWinJingle()
     {
-        audioSource.PlayOneShot(winJingle);
+        audioSource.PlayOneShot(winJingle);  
     }
 
     public void PlayDeathExplosion()
@@ -51,10 +52,10 @@ public class AudioManager : MonoBehaviour
         audioSource.PlayOneShot(deathExplosion);
     }
 
-    public void StartCue()
-    {   
-        if(!audioSource.isPlaying)
-        audioSource.PlayOneShot(startCue);
+
+    public void PlayBulletTime()
+    {
+        audioSource.PlayOneShot(bulletTime);
     }
 
     public void StopPlaying()

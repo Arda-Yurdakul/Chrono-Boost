@@ -42,9 +42,9 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 0}
-  m_PlayOnAwake: 0
-  m_Volume: 0.4
+  m_audioClip: {fileID: 8300000, guid: 98dddef151f804f42b15032e13ebf23c, type: 3}
+  m_PlayOnAwake: 1
+  m_Volume: 0.1
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -144,3 +144,4 @@ MonoBehaviour:
   winJingle: {fileID: 8300000, guid: 8d33cc3365f36a047ae28cdb406e3bf6, type: 3}
   deathExplosion: {fileID: 8300000, guid: f9380c24919daab4ebc6fd3d862fb579, type: 3}
   startCue: {fileID: 8300000, guid: 98dddef151f804f42b15032e13ebf23c, type: 3}
+  bulletTime: {fileID: 8300000, guid: 9bd878358b0af044abe5367dc4b3c388, type: 3}

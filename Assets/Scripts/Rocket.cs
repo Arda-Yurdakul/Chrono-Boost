@@ -10,13 +10,16 @@ public class Rocket : MonoBehaviour
     
     [SerializeField] private float thrust;
     [SerializeField] private float rotation;
-    [SerializeField] private float fuel = 20;
+    
 
     [SerializeField] private ParticleSystem engineParticles;
     [SerializeField] private ParticleSystem winParticles;
     [SerializeField] private ParticleSystem deathParticles;
     [SerializeField] private Slider fuelBar;
+    [SerializeField] private Slider slowBar;
+    [SerializeField] private float fuel;
 
+    private int bulletTimeLeft;
     private bool hasCollided;
     private enum State { Alive, Dead, Transcending }
     State state;
@@ -30,6 +33,8 @@ public class Rocket : MonoBehaviour
         state = State.Alive;
         hasCollided = false;
         fuelBar.maxValue = fuel;
+        bulletTimeLeft = 2;
+        slowBar.maxValue = 2;
     }
 
     // Update is called once per frame
@@ -38,21 +43,21 @@ public class Rocket : MonoBehaviour
         if (state != State.Alive) { return; }
         ProcessInput();
         fuelBar.value = fuel;
+        slowBar.value = bulletTimeLeft;
     }
 
 
 
     private void ProcessInput()
     {
-        if (Input.GetKeyDown(KeyCode.E))
+        if (Input.GetKeyDown(KeyCode.E) && bulletTimeLeft > 0 && Time.timeScale == 1)
         {
-            if (Time.timeScale == 1f)
-                Time.timeScale = 0.3f;
-            else
-                Time.timeScale = 1f;
+            AudioManager.Instance.PlayBulletTime();
+            bulletTimeLeft -= 1;
+            BulletTime();             
         }
 
-        if (Input.GetKey("space") && fuel > 0)
+        else if (Input.GetKey("space") && fuel > 0)
         {
             rigidbody.AddRelativeForce(0, thrust * Time.deltaTime, 0);
             AudioManager.Instance.PlayThruster();
@@ -60,7 +65,8 @@ public class Rocket : MonoBehaviour
             if(!engineParticles.isPlaying)
                 engineParticles.Play();
         }
-        else
+
+        if(Input.GetKeyUp("space"))
         {
             AudioManager.Instance.StopPlaying();
             engineParticles.Stop();
@@ -119,5 +125,18 @@ public class Rocket : MonoBehaviour
     public void NextLevel()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+    }
+
+    public void BulletTime()
+    {
+        Time.timeScale = 0.3f;
+        Time.fixedDeltaTime = 0.02F * Time.timeScale;
+        Invoke("ResetBulletTime", 1f);
+    }
+
+    public void ResetBulletTime()
+    {
+        Time.timeScale = 1f;
+        Time.fixedDeltaTime = 0.02F;
     }
 }
