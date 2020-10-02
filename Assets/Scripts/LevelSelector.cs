@@ -7,6 +7,6 @@ public class LevelSelector : MonoBehaviour
 {
     public void Level(int i)
     {
-        SceneManager.LoadScene(i);
+        SceneManager.LoadScene(i + 1);
     }
 }

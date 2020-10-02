@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using UnityStandardAssets.CrossPlatformInput;
 
 public class Rocket : MonoBehaviour
 {
@@ -50,23 +51,23 @@ public class Rocket : MonoBehaviour
 
     private void ProcessInput()
     {
-        if (Input.GetKeyDown(KeyCode.E) && bulletTimeLeft > 0 && Time.timeScale == 1)
+        if (CrossPlatformInputManager.GetButtonDown("Chrono_Button") && bulletTimeLeft > 0 && Time.timeScale == 1)
         {
             AudioManager.Instance.PlayBulletTime();
             bulletTimeLeft -= 1;
             BulletTime();             
         }
 
-        else if (Input.GetKey("space") && fuel > 0)
+        else if (CrossPlatformInputManager.GetButton("Boost_Button") && fuel > 0)
         {
             rigidbody.AddRelativeForce(0, thrust * Time.deltaTime, 0);
             AudioManager.Instance.PlayThruster();
             fuel -= 1 * Time.deltaTime;
-            if(!engineParticles.isPlaying)
+            if(!engineParticles.isPlaying && Time.timeScale != 0)
                 engineParticles.Play();
         }
 
-        if(Input.GetKeyUp("space"))
+        if(CrossPlatformInputManager.GetButtonUp("Boost_Button"))
         {
             AudioManager.Instance.StopPlaying();
             engineParticles.Stop();
@@ -74,12 +75,12 @@ public class Rocket : MonoBehaviour
 
         rigidbody.freezeRotation = true;
 
-        if(Input.GetKey(KeyCode.A))
+        if(CrossPlatformInputManager.GetButton("Left_Button"))
         {
             transform.Rotate(Vector3.forward * Time.deltaTime * rotation);
         }
 
-        else if (Input.GetKey(KeyCode.D))
+        else if (CrossPlatformInputManager.GetButton("Right_Button"))
         {
             transform.Rotate(Vector3.back * Time.deltaTime * rotation);
         }

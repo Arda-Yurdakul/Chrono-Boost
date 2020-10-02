@@ -12,7 +12,8 @@ public class Projectile : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        onCoolDown = false;
+        onCoolDown = true;
+        Invoke("resetCoolDown", 1.0f);
     }
 
     // Update is called once per frame
@@ -26,8 +27,9 @@ public class Projectile : MonoBehaviour
         {
             onCoolDown = true;
             GameObject bullet = Instantiate(bulletPrefab, transform.position, Quaternion.identity);
+            AudioManager.Instance.PlayPew();
             bullet.GetComponent<Rigidbody>().AddForce(alignment * 1000);
-            Invoke("resetCoolDown", 3.0f);
+            Invoke("resetCoolDown", 2.0f);
         }
         
 

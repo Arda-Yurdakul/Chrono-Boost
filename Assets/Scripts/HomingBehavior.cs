@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-[DisallowMultipleComponent]
+
 public class HomingBehavior : MonoBehaviour
 {
     [SerializeField] private GameObject player;
@@ -20,7 +20,7 @@ public class HomingBehavior : MonoBehaviour
         transform.position = Vector3.MoveTowards(transform.position, player.transform.position, speed * Time.deltaTime);
         Vector3 dist = transform.position - player.transform.position;
         transform.LookAt(dist);
-        print("Hey");
+
     }
 
     private void OnCollisionEnter(Collision collision)
@@ -29,6 +29,9 @@ public class HomingBehavior : MonoBehaviour
         {
             collision.gameObject.GetComponent<Rigidbody>().AddForce(600 * (player.transform.position - transform.position));
         }
+
+        else
+            print("hey");
     }
 
     

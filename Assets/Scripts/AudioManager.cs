@@ -9,6 +9,7 @@ public class AudioManager : MonoBehaviour
     [SerializeField] AudioClip deathExplosion;
     [SerializeField] AudioClip startCue;
     [SerializeField] AudioClip bulletTime;
+    [SerializeField] AudioClip pew;
     AudioSource audioSource;
 
 
@@ -38,7 +39,7 @@ public class AudioManager : MonoBehaviour
 
     public void PlayThruster()
     {
-        if (!audioSource.isPlaying)
+        if (!audioSource.isPlaying && Time.timeScale != 0)
             audioSource.PlayOneShot(mainEngine);
     }
 
@@ -56,6 +57,11 @@ public class AudioManager : MonoBehaviour
     public void PlayBulletTime()
     {
         audioSource.PlayOneShot(bulletTime);
+    }
+
+    public void PlayPew()
+    {
+        audioSource.PlayOneShot(pew);
     }
 
     public void StopPlaying()
