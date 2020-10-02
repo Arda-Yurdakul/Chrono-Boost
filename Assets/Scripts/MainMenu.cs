@@ -11,7 +11,7 @@ public class MainMenu : MonoBehaviour
 
     private void Update()
     {
-        if(Input.GetKey(KeyCode.Space))
+        if(Input.touchCount > 0)
         {
             screenAnimator.SetTrigger("StartGame");
             shipAnimator.SetTrigger("StartGame");

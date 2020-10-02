@@ -1134,7 +1134,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d03add41e0647f244b6e1827090dae9a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 0.5
+  finalTransform: {x: 0.3780424, y: 14, z: -22.13001}
+  speed: 0.25
 --- !u!1 &1591021521
 GameObject:
   m_ObjectHideFlags: 0
@@ -1902,10 +1903,6 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 487373044, guid: 8ce564bb7f927974581b0e2c4bf80c71, type: 3}
-      propertyPath: m_Name
-      value: SlowImage
-      objectReference: {fileID: 0}
     - target: {fileID: 7088456284249878355, guid: 8ce564bb7f927974581b0e2c4bf80c71, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -2088,13 +2085,17 @@ PrefabInstance:
       propertyPath: m_Name
       value: Spaceship
       objectReference: {fileID: 0}
+    - target: {fileID: 7810919847916176205, guid: 55fa30d7afb49274ab83ee9ba5a36c90, type: 3}
+      propertyPath: m_UseGravity
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8775752725882945871, guid: 55fa30d7afb49274ab83ee9ba5a36c90, type: 3}
       propertyPath: m_LocalPosition.x
       value: 11.7
       objectReference: {fileID: 0}
     - target: {fileID: 8775752725882945871, guid: 55fa30d7afb49274ab83ee9ba5a36c90, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 17.3
+      value: 17.5
       objectReference: {fileID: 0}
     - target: {fileID: 8775752725882945871, guid: 55fa30d7afb49274ab83ee9ba5a36c90, type: 3}
       propertyPath: m_LocalPosition.z
