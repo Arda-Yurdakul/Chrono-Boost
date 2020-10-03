@@ -22,8 +22,8 @@ public class Rocket : MonoBehaviour
 
     private int bulletTimeLeft;
     private bool hasCollided;
-    private enum State { Alive, Dead, Transcending }
-    State state;
+    public enum State { Alive, Dead, Transcending }
+    public State state;
 
 
 
@@ -36,6 +36,7 @@ public class Rocket : MonoBehaviour
         fuelBar.maxValue = fuel;
         bulletTimeLeft = 2;
         slowBar.maxValue = 2;
+        print(PlayerPrefs.GetInt("HighestLevel"));
     }
 
     // Update is called once per frame
@@ -125,6 +126,10 @@ public class Rocket : MonoBehaviour
 
     public void NextLevel()
     {
+        int completedLevel = SceneManager.GetActiveScene().buildIndex - 1;
+        int highestCompletedLevel = PlayerPrefs.GetInt("HighestLevel");
+        if(completedLevel > highestCompletedLevel)
+            PlayerPrefs.SetInt("HighestLevel", completedLevel);
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 

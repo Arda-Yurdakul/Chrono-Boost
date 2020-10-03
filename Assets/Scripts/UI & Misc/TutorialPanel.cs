@@ -13,7 +13,12 @@ public class TutorialPanel : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.touchCount > 0)
-            this.gameObject.SetActive(false);
+        #if UNITY_EDITOR
+            if (Input.GetKeyDown(KeyCode.E))
+                this.gameObject.SetActive(false);
+        #else
+            if (Input.touchCount > 0)
+                this.gameObject.SetActive(false);
+        #endif
     }
 }

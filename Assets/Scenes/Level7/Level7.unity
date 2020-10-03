@@ -989,6 +989,10 @@ PrefabInstance:
       propertyPath: slowBar
       value: 
       objectReference: {fileID: 623372642}
+    - target: {fileID: 4769762593385924939, guid: 55fa30d7afb49274ab83ee9ba5a36c90, type: 3}
+      propertyPath: fuel
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 4769762593385924940, guid: 55fa30d7afb49274ab83ee9ba5a36c90, type: 3}
       propertyPath: m_Name
       value: Spaceship

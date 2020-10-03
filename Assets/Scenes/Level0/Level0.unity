@@ -1644,6 +1644,10 @@ PrefabInstance:
       propertyPath: slowBar
       value: 
       objectReference: {fileID: 1181798466}
+    - target: {fileID: 4769762593385924939, guid: 55fa30d7afb49274ab83ee9ba5a36c90, type: 3}
+      propertyPath: adManager
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 4769762593385924940, guid: 55fa30d7afb49274ab83ee9ba5a36c90, type: 3}
       propertyPath: m_Name
       value: Spaceship
